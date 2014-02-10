@@ -29,12 +29,14 @@ autocmd FileType python set errorformat=%f:%l:\ %m
 let g:pylint_show_rate = 0
 
 set incsearch
-
 set autoindent
-
 set hidden
-
 set tw=90
+set foldmethod=syntax
+set mouse=a
+
+map <A-PageUp> gT
+map <A-PageDown> gt
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 " match ExtraWhitespace /\s\+$/
