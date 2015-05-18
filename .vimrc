@@ -6,6 +6,7 @@ map <C-n>     :NERDTreeToggle<CR>
 nmap <C-f> :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows=0
 
 set number
 set lazyredraw
@@ -15,11 +16,15 @@ set hlsearch
 filetype plugin on
 filetype indent on
 
+source $HOME/.vim/opencl_cl.vim
+
 autocmd BufRead *.as set filetype=actionscript|set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd BufRead *.mxml set filetype=mxml|set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType * set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType make setlocal noexpandtab|setlocal tabstop=8|setlocal shiftwidth=8|set softtabstop=8
+autocmd FileType c,cpp source $HOME/.vim/opencl.vim
+autocmd BufNewFile,BufRead *.cl  set filetype=opencl
 
 let _curfile = expand("%:t")
 if _curfile =~ "Makefile*" || _curfile =~ "makefile" || _curfile =~ "Make.*"
@@ -66,7 +71,7 @@ function TrimWhiteSpace()
 :endfunction
 
 let g:ctrlp_root_markers = ['.git']
-let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_user_command = 'find %s -type f | grep -v /obj/'
 
 "Alex insert
 map <c-j> <c-w>j
@@ -74,3 +79,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 map <leader>b :CtrlPBuffer<cr>
+
+" Smart search
+set ignorecase
+set smartcase
