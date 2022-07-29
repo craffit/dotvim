@@ -21,7 +21,7 @@
 	url = https://github.com/Shougo/vimproc.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search.git
@@ -30,4 +30,4 @@
 	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/vim-opencl"]
 	path = bundle/vim-opencl
-	url = git://github.com/petRUShka/vim-opencl.git
+	url = https://github.com/petRUShka/vim-opencl.git
